@@ -1,0 +1,23 @@
+{% load static %}
+
+<header class="main-header main-header__two">
+    <nav class="main-menu main-menu__two">
+        <div class="container">
+            <div class="logo-box">
+                <a href="{% url 'home' %}" aria-label="logo image">
+                    <img src="{% static 'images/logo-light-2.png' %}" width="153" alt="">
+                </a>
+                <span class="fa fa-bars mobile-nav__toggler"></span>
+            </div>
+            <ul class="main-menu__list">
+                <li class="dropdown"><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html">News</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<div class="stricky-header stricked-menu main-menu main-menu__two">
+    <div class="sticky-header__content"></div>
+</div>
