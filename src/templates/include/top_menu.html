@@ -10,10 +10,10 @@
                 <span class="fa fa-bars mobile-nav__toggler"></span>
             </div>
             <ul class="main-menu__list">
-                <li class="active"><a href="{% url 'home' %}">Главная</a></li>
+                <li class="{% if request.path == '/' %}current{% else %}{% endif %}"><a href="{% url 'home' %}">Главная</a></li>
                 <li class=""><a href="about.html">О нас</a></li>
                 <li class=""><a href="contact.html">Контакты</a></li>
-                <li class="{% if url '' %}"><a href="{% url 'posts' %}">Новости</a></li>
+                <li class="{% if request.path == '/posts/' %}current{% endif %}"><a href="{% url 'posts' %}">Новости</a></li>
             </ul>
         </div>
     </nav>

@@ -2353,20 +2353,7 @@ h6 {
   position: relative;
 }
 
-.main-menu .main-menu__list > li::before, .main-menu .main-menu__list > li::after,
-.stricky-header .main-menu__list > li::before,
-.stricky-header .main-menu__list > li::after {
-  content: "";
-  width: 37%;
-  height: 2px;
-  background-color: var(--thm-primary);
-  position: absolute;
-  bottom: 13px;
-  opacity: 0;
-  -webkit-transition: opacity 500ms ease;
-  transition: opacity 500ms ease;
-  z-index: 1;
-}
+
 
 .main-menu .main-menu__list > li::before,
 .stricky-header .main-menu__list > li::before {
