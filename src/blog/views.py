@@ -23,3 +23,31 @@ class PostDetailView(DetailView):
     template_name = 'blog/post_detail.html'
     context_object_name = 'post'
     slug_url_kwarg = 'slug'
+
+
+class PostsByTag(ListView):
+    """Выводит записи по тегу"""
+    context_object_name = 'posts'
+
+    def get_queryset(self):
+        return Post.objects.filter(tags__slug=self.kwargs['slug'])
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Записи по тегу: ' + str(
+            Tag.objects.get(slug=self.kwargs['slug']))
+        return context
+
+
+class PostsByCategory(ListView):
+    """Выводит записи по категории"""
+    context_object_name = 'posts'
+
+    def get_queryset(self):
+        return Post.objects.filter(category__slug=self.kwargs['slug'])
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Записи по категории: ' + str(
+            Category.objects.get(slug=self.kwargs['slug']))
+        return context

@@ -1,0 +1,10 @@
+<div class="blog-sidebar__categories">
+    <h3>Категории</h3>
+    <ul>
+        {% for category in categories  %}
+        <li>
+            <a href="{{ category.get_absolute_url }}"><i class="agrikon-icon-right-arrow"></i>{{ category.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

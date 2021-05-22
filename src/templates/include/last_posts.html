@@ -1,0 +1,11 @@
+<div class="blog-sidebar__posts">
+    <h3>Последнии посты</h3>
+    <ul>
+        {% for post in posts %}
+        <li>
+            <img src="{{ post.image.url }}" alt="" width="50" height="50">
+            <h4><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h4>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
