@@ -3,6 +3,19 @@
 {% block title %}Блог{% endblock title %}
 
 {% block content %}
+
+<section class="page-header">
+    <div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg-1-1.jpg);"></div>
+    <div class="container">
+        <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="{% url 'home' %}">Главная</a></li>
+            <li>/</li>
+            <li><span>Новости</span></li>
+        </ul>
+        <h2>Новости</h2>
+    </div>
+</section>
+
 <section class="blog-grid">
     <div class="container">
         <div class="row">
