@@ -3,7 +3,7 @@
     <ul>
         {% for post in posts %}
         <li>
-            <img src="{{ post.image.url }}" alt="" width="50" height="50">
+            <img src="{{ post.image.url }}" alt="" width="65" height="65">
             <h4><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h4>
         </li>
         {% endfor %}

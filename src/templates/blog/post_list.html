@@ -27,7 +27,7 @@
                         <div class="blog-card__date">{{ post.created_at|date:"j" }} {{ post.created_at|date:"E" }}</div>
                         <div class="blog-card__meta">
                             <a href="blog-details.html"><i class="far fa-user-circle"></i>Автор: {{ post.author }}</a>
-                            <a href="blog-details.html"><i class="far fa-comments"></i> 2 Comments</a>
+                            <a href="#"> Категория: {{ post.category }}</a>
                         </div>
                         <h3><a href="blog-details.html">{{ post.title }}</a></h3>
                         <a href="{{ post.get_absolute_url }}" class="thm-btn">Читать далее</a><!-- /.thm-btn -->
@@ -36,9 +36,25 @@
             </div>
             {% endfor %}
         </div>
-        <div class="text-center more-btn__box">
-            <a href="#" class="thm-btn">Load More</a>
-        </div>
+        {% if page_obj.has_other_pages %}
+            <div class="text-center more-btn__box">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-success">Назад</a>
+                {% endif %}
+
+                {% for p in page_obj.paginator.page_range %}
+                    {% if page_obj.number == p %}
+                        <a class="btn btn-outline-success" href="">{{ p }}</a>
+                    {% elif p > page_obj.number|add:-3 and  p < page_obj.number|add:3 %}
+                        <a href="?page={{ p }}" class="btn btn-outline-success">{{ p }}</a>
+                    {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-success">Вперед</a>
+                {% endif %}
+            </div>
+        {% endif %}
     </div>
 </section>
 {% endblock content %}
