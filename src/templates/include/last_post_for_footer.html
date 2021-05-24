@@ -1,0 +1,16 @@
+
+<ul class="list-unstyled footer-widget__post">
+    {% for post in posts %}
+        <li>
+            <img src="{{ post.image.url }}" alt="">
+            <div class="footer-widget__post-content">
+                <span>{{ post.created_at|date:"E j" }}, {{ post.created_at|date:"Y" }}</span>
+                <h4>
+                    <a href="blog-details.html">
+                        {{ post.title|truncatewords_html:8 }}
+                    </a>
+                </h4>
+            </div>
+        </li>
+    {% endfor %}
+</ul>

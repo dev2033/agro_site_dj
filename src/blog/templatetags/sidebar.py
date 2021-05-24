@@ -7,8 +7,18 @@ register = template.Library()
 
 
 @register.inclusion_tag('include/last_posts.html')
-def get_last_posts(cnt=5):
+def get_last_posts(cnt=3):
     """Выводит наиболее просматриваемые посты (по умолчанию - 3)"""
+    posts = Post.objects.order_by('-id')[:cnt]
+    return {'posts': posts}
+
+
+@register.inclusion_tag('include/last_post_for_footer.html')
+def get_last_posts_for_footer(cnt=2):
+    """
+    Выводит наиболее просматриваемые посты
+    для подвала сайта(по умолчанию - 2)
+    """
     posts = Post.objects.order_by('-id')[:cnt]
     return {'posts': posts}
 

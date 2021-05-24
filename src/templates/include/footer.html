@@ -1,7 +1,8 @@
 {% load static %}
+{% load sidebar %}
 
 <footer class="site-footer">
-    <img src="assets/images/icons/footer-bg-icon-1.png"
+    <img src="{% static 'images/icons/footer-bg-icon-1.png' %}"
          class="site-footer__shape-1" alt="">
     <img src="{% static 'images/icons/footer-bg-icon-2.png' %}" class="site-footer__shape-2" alt="">
     <div class="container">
@@ -12,16 +13,8 @@
                         <img src="{% static 'images/logo-light.png' %}" width="153" alt="">
                     </a>
                     <p>
-                        There are many variations of passages of lorem ipsum
-                        available, but the majority suffered.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, praesentium.
                     </p>
-                    <form action="#" data-url="YOUR_MAILCHIMP_URL" class="mc-form">
-                        <input type="email" name="EMAIL"
-                               placeholder="Email Address">
-                        <button type="submit"><i
-                                class="agrikon-icon-right-arrow"></i>
-                        </button>
-                    </form>
                     <div class="mc-form__response"></div>
                     <div class="footer__social">
                         <a href="#" class="fab fa-facebook-square"></a>
@@ -35,39 +28,17 @@
                 <div class="footer-widget footer-widget__links-widget">
                     <h3 class="footer-widget__title">Links</h3>
                     <ul class="list-unstyled footer-widget__links">
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">New Campaign</a></li>
-                        <li><a href="#">Upcoming Events</a></li>
-                        <li><a href="#">Volunteers</a></li>
+                        <li><a href="{% url 'home' %}">Главная</a></li>
+                        <li><a href="{% url 'posts' %}">Блог</a></li>
+                        <li><a href="{% url 'contact' %}">Контакты</a></li>
+                        <li><a href="#">О нас</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
-                <div class="footer-widget">
-                    <h3 class="footer-widget__title">News</h3>
-                    <ul class="list-unstyled footer-widget__post">
-                        <li>
-                            <img src="{% static 'images/resources/footer-post-1.png' %}"
-                                 alt="">
-                            <div class="footer-widget__post-content">
-                                <span>Nov 16, 2020</span>
-                                <h4>
-                                    <a href="blog-details.html">
-                                        How to grow vagetables in the forms
-                                    </a>
-                                </h4>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="{% static 'images/resources/footer-post-2.png' %}" alt="">
-                            <div class="footer-widget__post-content">
-                                <span>Nov 16, 2020</span>
-                                <h4><a href="blog-details.html">How to grow
-                                    vagetables in the forms</a></h4>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+
+                {% include 'include/footer_tpl.html' %}
+
             </div>
             <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
                 <h3 class="footer-widget__title">Contact</h3>
