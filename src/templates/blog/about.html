@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <section class="about-three">
+        <div class="container">
+            <div class="row">
+                {% for item in info %}
+                <div class="col-lg-6">
+                    <div class="about-three__image">
+                        <img src="{{ item.image.url }}">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-three__content">
+                        <div class="block-title">
+                            <div class="block-title__image"></div>
+                            <p>Get to know us</p>
+                            <h3>{{ item.title|safe }}</h3>
+                        </div>
+
+                        <div class="about-three__summery">
+                            <p>{{ item.content|safe }}</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="call-to-action jarallax" data-jarallax data-speed="0.3" data-imgPosition="-80% 50%">
+        <img class="call-to-action__bg jarallax-img" src="assets/images/backgrounds/cta-1-bg-1.jpg" alt="parallax-image" />
+        <div class="container">
+            <div class="call-to-action__content">
+                <i class="call-to-action__icon agrikon-icon-agriculture-2"></i>
+                <h3>We’re popular leader in agriculture market globally</h3>
+            </div>
+            <div class="call-to-action__button">
+                <a href="services.html" class="thm-btn">Discover More</a>
+            </div>
+        </div>
+    </section>
+
+<div class="container"><br><br><br></div>
+{% endblock content %}

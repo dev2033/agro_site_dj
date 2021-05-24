@@ -68,4 +68,16 @@ class Category(models.Model):
         verbose_name_plural = 'Категории'
 
 
+class About(models.Model):
+    """О нас"""
+    title = models.CharField('Название', max_length=250,
+                             help_text='Название поста для страницы "О нас"')
+    image = models.ImageField('Изображение', upload_to='about/')
+    content = models.TextField('Контент')
 
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'О нас'
+        verbose_name_plural = 'О нас'

@@ -37,7 +37,7 @@
                         <a href="#"><i class="far fa-user-circle"></i> by {{ post.author }}</a>
                         <a href="#"> Категория: {{ post.category }}</a>
                     </div>
-                    <h3><a href="#">{{ post.title }}</a></h3>
+                    <h3><a href="#">{{ post.title|safe }}</a></h3>
                 </div>
 
                 <div class="blog-details__content">

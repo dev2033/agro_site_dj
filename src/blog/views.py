@@ -1,6 +1,7 @@
+from django.shortcuts import render
 from django.views.generic import DetailView, ListView, View
 
-from .models import Post, Category, Tag
+from .models import Post, Category, Tag, About
 
 
 class HomeView(ListView):
@@ -53,3 +54,25 @@ class PostsByCategory(ListView):
         context['title'] = 'Записи по категории: ' + str(
             Category.objects.get(slug=self.kwargs['slug']))
         return context
+
+
+class AboutAsView(View):
+    """Вывод информации на странице 'О нас'"""
+    def get(self, request, *args, **kwargs):
+        info = About.objects.all()
+        context = {'info': info}
+        return render(request, 'blog/about.html', context)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
