@@ -1,13 +1,14 @@
-from django.shortcuts import render
 from django.views.generic import DetailView, ListView, View
 
 from .models import Post, Category, Tag
 
 
-class HomeView(View):
+class HomeView(ListView):
     """Главная страница"""
-    def get(self, request, *args, **kwargs):
-        return render(request, 'blog/home_page.html')
+    model = Post
+    context_object_name = 'posts'
+    template_name = 'blog/home_page.html'
+    paginate_by = 6
 
 
 class PostsListView(ListView):

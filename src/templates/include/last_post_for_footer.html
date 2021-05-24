@@ -6,7 +6,7 @@
             <div class="footer-widget__post-content">
                 <span>{{ post.created_at|date:"E j" }}, {{ post.created_at|date:"Y" }}</span>
                 <h4>
-                    <a href="blog-details.html">
+                    <a href="{{ post.get_absolute_url }}">
                         {{ post.title|truncatewords_html:8 }}
                     </a>
                 </h4>

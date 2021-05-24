@@ -11,7 +11,7 @@
     <div class="sticky-header__content"></div>
 </div>
 <section class="page-header">
-    <div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg-1-1.jpg);"></div>
+    <div class="page-header__bg" style="background-image: {% static 'images/backgrounds/page-header-bg-1-1.jpg' %});"></div>
     <div class="container">
         <ul class="thm-breadcrumb list-unstyled">
             <li><a href="{% url 'home' %}">Главная</a></li>
@@ -37,7 +37,7 @@
                         <a href="#"><i class="far fa-user-circle"></i> by {{ post.author }}</a>
                         <a href="#"> Категория: {{ post.category }}</a>
                     </div>
-                    <h3><a href="blog-details.html">{{ post.title }}</a></h3>
+                    <h3><a href="#">{{ post.title }}</a></h3>
                 </div>
 
                 <div class="blog-details__content">

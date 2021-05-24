@@ -26,10 +26,10 @@
                     <div class="blog-card__content">
                         <div class="blog-card__date">{{ post.created_at|date:"j" }} {{ post.created_at|date:"E" }}</div>
                         <div class="blog-card__meta">
-                            <a href="blog-details.html"><i class="far fa-user-circle"></i>Автор: {{ post.author }}</a>
+                            <a href="#"><i class="far fa-user-circle"></i>Автор: {{ post.author }}</a>
                             <a href="#"> Категория: {{ post.category }}</a>
                         </div>
-                        <h3><a href="blog-details.html">{{ post.title }}</a></h3>
+                        <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
                         <a href="{{ post.get_absolute_url }}" class="thm-btn">Читать далее</a><!-- /.thm-btn -->
                     </div>
                 </div>
