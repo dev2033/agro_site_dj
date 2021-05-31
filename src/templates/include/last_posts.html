@@ -4,7 +4,7 @@
         {% for post in posts %}
         <li>
             <img src="{{ post.image.url }}" alt="" width="65" height="65">
-            <h4><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h4>
+            <h4><a href="{{ post.get_absolute_url }}">{{ post.title|truncatewords_html:3|safe }}</a></h4>
         </li>
         {% endfor %}
     </ul>

@@ -29,7 +29,7 @@
                             <a href="#"><i class="far fa-user-circle"></i>Автор: {{ post.author }}</a>
                             <a href="#"> Категория: {{ post.category }}</a>
                         </div>
-                        <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
+                        <h3><a href="{{ post.get_absolute_url }}">{{ post.title|truncatewords_html:3|safe }}</a></h3>
                         <a href="{{ post.get_absolute_url }}" class="thm-btn">Читать далее</a><!-- /.thm-btn -->
                     </div>
                 </div>

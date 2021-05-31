@@ -9,7 +9,7 @@ class HomeView(ListView):
     model = Post
     context_object_name = 'posts'
     template_name = 'blog/home_page.html'
-    paginate_by = 6
+    paginate_by = 3
 
 
 class PostsListView(ListView):
@@ -17,7 +17,7 @@ class PostsListView(ListView):
     model = Post
     template_name = 'blog/posts_list.html'
     context_object_name = 'posts'
-    paginate_by = 8
+    paginate_by = 6
 
 
 class PostDetailView(DetailView):

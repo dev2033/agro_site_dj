@@ -14,7 +14,7 @@ class Post(models.Model):
     )
     author = models.ForeignKey(User, on_delete=models.CASCADE,
                                verbose_name='Автор')
-    title = models.CharField("Название поста", max_length=100)
+    title = models.CharField("Название поста", max_length=300)
     slug = models.SlugField('Url', max_length=255, unique=True)
     content = models.TextField('Контент', blank=True)
     image = models.ImageField("Изображение", upload_to='posts/', blank=True,
